@@ -35,7 +35,7 @@ print("\n\nnull nel dataset\n", dataframe.isna().sum())
 
 #scatter plot
 plt.figure(figsize=(8, 6))
-plt.scatter(dataframe["fheight"], dataframe["sheight"], alpha=0.5, color='teal', edgecolors='k')
+plt.scatter(dataframe["fheight"], dataframe["sheight"], alpha=0.5)
 
 plt.xlabel("Altezza del padre (cm)")
 plt.ylabel("Altezza del figlio (cm)")
@@ -48,8 +48,7 @@ plt.show()
 dati = [dataframe["fheight"].dropna(), dataframe["sheight"].dropna()]
 
 plt.figure(figsize=(8, 6))
-plt.boxplot(dati, labels=["Altezza padre (fheight)", "Altezza figlio (sheight)"], patch_artist=True,
-            boxprops=dict(facecolor='lightblue'), medianprops=dict(color='red'))
+plt.boxplot(dati, labels=["Altezza padre (fheight)", "Altezza figlio (sheight)"])
 plt.title("Distribuzione delle altezze di padre e figlio")
 plt.ylabel("Altezza (cm)")
 
