@@ -11,39 +11,6 @@ df = pd.read_csv("pearson_dataset.csv")
 import matplotlib.pyplot as plt
 
 # y = mx + q
-"""x = df.drop(columns = ["sheight"]) #solo colanna padre
-y = df["sheight"] #colonna target
-
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2)
-
-print("dimensione df di train", x_train.shape)
-print("dimensione df di test", x_test.shape)
-
-#standardScaler
-scaler = StandardScaler()
-
-df2 = pd.DataFrame()
-scaler.fit(x_train)
-scaler.fit(y_train)
-
-x_train_std = scaler.transform(x_train)
-y_train_std = scaler.transform(y_train)
-
-x_test_std = scaler.transform(x_test)
-y_test_std = scaler.transform(y_test)
-
-model = LinearRegression()
-model.fit(x_train_std, y_train_std)
-
-print(model.intercept_)
-print(model.coef_)
-
-#fase di test
-y_pred = model.predict(x_test_std)
-
-rmse= root_mean_squared_error(y_test, y_pred)
-
-print(rmse)"""
 
 train, test = train_test_split(df, test_size=0.2)
 
