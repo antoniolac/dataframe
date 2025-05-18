@@ -39,7 +39,7 @@ X_test_std = scaler_X.transform(X_test)
 y_train_std = scaler_y.fit_transform(y_train.values.reshape(-1, 1))
 y_test_std = scaler_y.transform(y_test.values.reshape(-1, 1))
 
-#06-model
+#06-linear model
 model = LinearRegression()
 model.fit(X_train_std, y_train_std)
 y_pred = model.predict(X_test_std)

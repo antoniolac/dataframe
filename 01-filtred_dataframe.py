@@ -1,4 +1,4 @@
-# import nominali
+#nominal import
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -7,50 +7,50 @@ from sklearn.model_selection import train_test_split
 
 from pickle import TRUE
 
-# Uso import nominale di pandas per leggere un dataset
+#load dataframe
 dataframe = pd.read_csv("pearson_dataset.csv")
 print("\ndataframe in inch\n", dataframe)
 
-#converire da inch a cm
+#inch to cm
 dataframe["fheight"] = dataframe["fheight"] *2.54
 dataframe["sheight"] = dataframe["sheight"] *2.54
 print("\n\ndataframe in cm\n", dataframe)
 
-#seleziona solo sheight maggiori di 170
-selezione1 = dataframe[dataframe["sheight"]> 170]
-print("\n\naltezze sheight maggiori di 170cm\n", selezione1)
+#selection only sheight>170
+selection1 = dataframe[dataframe["sheight"]> 170]
+print("\n\height sheight > 170cm\n", selection1)
 
-#ordina sheight in ordine decrescente
+#sort sheight
 dataframe.sort_values(by="sheight", ascending=False, inplace=True)
-print("\n\nsheight in ordine decrescente", dataframe)
+print("\n\nsheight in descending order", dataframe)
 
-#selezione fheight>180 e sheight<170
-selezione2 = dataframe[(dataframe["fheight"] > 180) & (dataframe["sheight"] < 170)]
-print("\n\nselezione 2\n", selezione2)
-
-
-#controllo numero di null nel dataset
-print("\n\nnull nel dataset\n", dataframe.isna().sum())
+#select fheight>180 e sheight<170
+selection2 = dataframe[(dataframe["fheight"] > 180) & (dataframe["sheight"] < 170)]
+print("\n\nselection 2\n", selection2)
 
 
-#scatter plot
+#null check
+print("\n\nnull in the dataset\n", dataframe.isna().sum())
+
+
+#ScatterPlot
 plt.figure(figsize=(8, 6))
 plt.scatter(dataframe["fheight"], dataframe["sheight"], alpha=0.5)
 
-plt.xlabel("Altezza del padre (cm)")
-plt.ylabel("Altezza del figlio (cm)")
-plt.title("Relazione tra altezza del padre e altezza del figlio")
+plt.xlabel("Father Height (cm)")
+plt.ylabel("Son Height (cm)")
+plt.title("Relation beetween father height and son height")
 
 plt.show()
 
 
-#box plot
-dati = [dataframe["fheight"].dropna(), dataframe["sheight"].dropna()]
+#BoxPlot
+data = [dataframe["fheight"].dropna(), dataframe["sheight"].dropna()]
 
 plt.figure(figsize=(8, 6))
-plt.boxplot(dati, labels=["Altezza padre (fheight)", "Altezza figlio (sheight)"])
-plt.title("Distribuzione delle altezze di padre e figlio")
-plt.ylabel("Altezza (cm)")
+plt.boxplot(data, labels=["Father Height (fheight)", "Son Height (sheight)"])
+plt.title("Distribution")
+plt.ylabel("Height (cm)")
 
 plt.show()
 

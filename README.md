@@ -1,6 +1,6 @@
 # Data analysis with Pandas in py
 
-this project contains the first step to learn Machine Learing.
+this project contains the first step to learn Machine Learing:
 
 01-filtered_dataframe has some usefull methods to filtre the dataframe
 
